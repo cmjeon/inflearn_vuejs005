@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <ToolBar></ToolBar>
+    <tool-bar></tool-bar>
+    <!-- url이 만약 jobs -->
     <router-view></router-view>
   </div>
-  <!-- test -->
 </template>
 
 <script>
-import ToolBar from './components/ToolBar.vue'
-
+import ToolBar from './components/ToolBar.vue';
 export default {
   components: {
-    ToolBar,
+    ToolBar
   }
 }
 </script>
 
 <style>
+body {
+  padding: 0px;
+  margin: 0px;
+}
 </style>

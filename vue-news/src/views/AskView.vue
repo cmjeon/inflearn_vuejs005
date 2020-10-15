@@ -1,7 +1,5 @@
 <template>
-  <div>
-    ask
-  </div>
+  <div>ask</div>
 </template>
 
 <script>
