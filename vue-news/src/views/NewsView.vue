@@ -1,9 +1,12 @@
 <template>
   <div>
     <p v-for="item in this.$store.state.news">
-      <a v-bind:href="item.url">
+      <router-link v-bind:to="`/item/${item.id}`">
         {{ item.title}}
-      </a>
+      </router-link>
+      <!-- <a v-bind:href="item.url">
+        {{ item.title}}
+      </a> -->
       <small>
         {{ item.time_ago }} by 
         <router-link v-bind:to="`/user/${item.user}`">
