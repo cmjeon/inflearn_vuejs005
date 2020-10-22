@@ -9,9 +9,9 @@
         <!-- 기타 영역 정보 -->
         <div>
           <p class="ask-title">
-            <a v-bind:href="item.url">
+            <router-link v-bind:to="`/item/${item.id}`">
               {{ item.title }}
-            </a>
+            </router-link>
           </p>
           <small class="link-text">
             {{ item.time_ago }} by

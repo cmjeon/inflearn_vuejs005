@@ -4,7 +4,7 @@
       <li v-for="item in this.$store.state.jobs" class="post">
         <!-- 포인트 영역 -->
         <div class="points">
-          {{ item.points }}
+          {{ item.points || 0 }}
         </div>
         <!-- 기타 영역 정보 -->
         <div>
@@ -14,7 +14,10 @@
             </a>
           </p>
           <small class="link-text">
-            {{ item.time_ago }}, {{ item.domain }}
+            {{ item.time_ago }} by
+            <a :href="item.url">
+              {{ item.domain }}
+            </a>
           </small>
         </div>
       </li>
