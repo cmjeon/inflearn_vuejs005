@@ -4,26 +4,30 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-          <div>
-            {{ userInfo.id }}
-          </div>
+          <slot name="username"></slot>
+          <!-- <div>username : {{ info.id }}</div> -->
           <!-- <router-link v-bind:to="`/user/${userInfo.id}`">
             {{ userInfo.id }}
           </router-link> -->
           <div class="time">
-            {{ userInfo.created }}
+            <slot name="time"></slot>
           </div>
+          <slot name="karma"></slot>
+          <!-- <div class="time">time: {{ info.created }}</div> -->
         </div>
       </div>
 </template>
 
 <script>
 export default {
-  computed: {
-    userInfo() {
-      return this.$store.state.user;
-    }
-  },
+  props: {
+    info: Object
+  }
+  // computed: {
+  //   userInfo() {
+  //     return this.$store.state.user;
+  //   }
+  // },
 }
 </script>
 
