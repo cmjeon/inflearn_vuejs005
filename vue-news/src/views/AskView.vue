@@ -1,12 +1,11 @@
 <template>
   <div>
-    <ul class="ask-list">
+    <list-item></list-item>
+    <!-- <ul class="ask-list">
       <li v-for="item in fetchedAsk" class="post">
-        <!-- 포인트 영역 -->
         <div class="points">
           {{ item.points }}
         </div>
-        <!-- 기타 영역 정보 -->
         <div>
           <p class="ask-title">
             <router-link v-bind:to="`/item/${item.id}`">
@@ -19,7 +18,7 @@
           </small>
         </div>
       </li>
-    </ul>
+    </ul> -->
     <!-- <p v-for="item in fetchedAsk">
       <router-link v-bind:to="`/item/${item.id}`">
         {{ item.title}}
@@ -30,37 +29,42 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import ListItem from '../components/ListItem.vue';
+// import { mapGetters, mapState } from 'vuex';
+
 export default {
-  computed: {
-    // #4 배열표기법
-    ...mapGetters([
-      'fetchedAsk'
-    ])
+  components: {
+    ListItem,
+  }
+  // computed: {
+  //   // #4 배열표기법
+  //   ...mapGetters([
+  //     'fetchedAsk'
+  //   ])
 
-    // #3 객체표기법
-    // ...mapGetters({
-    //   fetchedAsk: 'fetchedAsk'
-    // })
+  //   // #3 객체표기법
+  //   // ...mapGetters({
+  //   //   fetchedAsk: 'fetchedAsk'
+  //   // })
 
-    // #2
-    // ...mapState({
-    //   fetchedAsk: state => state.ask
-    // }),
+  //   // #2
+  //   // ...mapState({
+  //   //   fetchedAsk: state => state.ask
+  //   // }),
 
-    // #1
-    // ask() {
-    //   return this.$store.state.ask
-    // }
-  },
-  created() {
-    this.$store.dispatch('FETCH_ASK');
-  },
+  //   // #1
+  //   // ask() {
+  //   //   return this.$store.state.ask
+  //   // }
+  // },
+  // created() {
+  //   this.$store.dispatch('FETCH_ASK');
+  // },
 }
 </script>
 
-<style scoped>
-.ask-list {
+<style>
+/* .ask-list {
   margin:0;
   padding:0;
 }
@@ -83,5 +87,5 @@ export default {
 }
 .link-text {
   color: #828282;
-}
+} */
 </style>
