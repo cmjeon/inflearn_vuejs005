@@ -5,16 +5,13 @@
         </div>
         <div class="user-description">
           <div>
-            {{ info.id }}
-          </div>
-          <div>
-            {{ info.karma }}
+            {{ userInfo.id }}
           </div>
           <!-- <router-link v-bind:to="`/user/${userInfo.id}`">
             {{ userInfo.id }}
           </router-link> -->
           <div class="time">
-            {{ info.created }}
+            {{ userInfo.created }}
           </div>
         </div>
       </div>
@@ -22,9 +19,11 @@
 
 <script>
 export default {
-  props: {
-    info: Object
-  }
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    }
+  },
 }
 </script>
 
