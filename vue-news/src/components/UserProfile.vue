@@ -4,11 +4,17 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-          <!-- <router-link v-bind:to="`/user/${fetchedItem.user}`">
-            {{ fetchedItem.user }}
+          <div>
+            {{ userInfo.id }}
+          </div>
+          <div>
+            {{ userInfo.karma }}
+          </div>
+          <!-- <router-link v-bind:to="`/user/${userInfo.id}`">
+            {{ userInfo.id }}
           </router-link> -->
           <div class="time">
-            <!-- {{ fetchedItem.time_ago }} -->
+            {{ userInfo.created }}
           </div>
         </div>
       </div>
@@ -16,7 +22,11 @@
 
 <script>
 export default {
-
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    }
+  },
 }
 </script>
 
