@@ -14,8 +14,13 @@ const fetchJobsList = () => {
   return axios.get(`${config.baseUrl}jobs/1.json`);
 }
 
-const fetchAskList = () => {
-  return axios.get(`${config.baseUrl}ask/1.json`);
+const fetchAskList = async () => {
+  try {
+    const response = await axios.get(`${config.baseUrl}ask/1.json`);
+    return response
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const fetchList = (pageName) => {
@@ -26,8 +31,12 @@ const fetchUserInfo = (username) => {
   return axios.get(`${config.baseUrl}user/${username}.json`);
 }
 
-const fetchItemInfo = (itemId) => {
-  return axios.get(`${config.baseUrl}item/${itemId}.json`);
+const fetchItemInfo = async (itemId) => {
+  try {
+    return await axios.get(`${config.baseUrl}item/${itemId}.json`);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 
