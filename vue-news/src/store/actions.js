@@ -8,36 +8,36 @@ import {
 } from '../api/index.js';
 
 export default {
-  // FETCH_NEWS(context) {
-  //   fetchNewsList()
-  //     .then(response  => {
-  //       context.commit('SET_NEWS', response.data);
-  //       return response;
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // },
-  // FETCH_ASK({ commit }) {
-  //   fetchAskList()
-  //     .then(({ data })  => {
-  //       commit('SET_ASK', data);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // },
-  // FETCH_JOBS({ commit }) {
-  //   fetchJobsList()
-  //     .then(({ data }) => {
-  //       commit('SET_JOBS', data);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // },
+  FETCH_NEWS(context) {
+    return fetchNewsList()
+      .then(response  => {
+        context.commit('SET_NEWS', response.data);
+        return response;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+  FETCH_ASK({ commit }) {
+    return fetchAskList()
+      .then(({ data })  => {
+        commit('SET_ASK', data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+  FETCH_JOBS({ commit }) {
+    return fetchJobsList()
+      .then(({ data }) => {
+        commit('SET_JOBS', data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
   FETCH_USER({ commit }, name) {
-    fetchUserInfo(name)
+    return fetchUserInfo(name)
       .then(({ data }) => {
         commit('SET_USER', data);
       })
@@ -46,7 +46,7 @@ export default {
       })
   },
   FETCH_ITEM({ commit }, name) {
-    fetchItemInfo(name)
+    return fetchItemInfo(name)
       .then(({ data }) => {
         commit('SET_ITEM', data);
       })
@@ -55,7 +55,7 @@ export default {
       })
   },
   FETCH_LIST({ commit }, pageName) {
-    fetchList(pageName)
+    return fetchList(pageName)
       .then(({ data }) => {
         commit('SET_LIST', data);
       })
