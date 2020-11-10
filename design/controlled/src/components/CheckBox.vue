@@ -1,13 +1,15 @@
 <template>
-  <input type="checkbox" v-model="ttt">
+  <input type="checkbox" :value="value" @click="toggleCheckBox">
 </template>
 
 <script>
 export default {
-  props: ['checked'],
-  data() {
-    return {
-      ttt : this.checked,
+  // @input 이벤트
+  // :value 값
+  props: ['value'],
+  methods: {
+    toggleCheckBox() {
+      this.$emit('input', !this.value);
     }
   }
 }
