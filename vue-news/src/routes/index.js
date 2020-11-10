@@ -5,7 +5,7 @@ import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
-import craeteListView from  '../views/CreateListView.js';
+// import craeteListView from  '../views/CreateListView.js';
 import bus from  '../utils/bus.js';
 import { store } from '../store/index.js';
 

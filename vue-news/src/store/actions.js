@@ -82,10 +82,10 @@ export default {
         console.log(error);
       })
   },
-  async FETCH_LIST({ commit }, pageName) {
-    const response = await fetchList(pageName);
-    console.log(4);
-    commit('SET_LIST', response.data);
-    return response;
-  }
+  // async FETCH_LIST({ commit }, pageName) {
+  //   const response = await fetchList(pageName);
+  //   console.log(4);
+  //   commit('SET_LIST', response.data);
+  //   return response;
+  // }
 }
