@@ -1,5 +1,5 @@
 <template>
-  <check-box></check-box>
+  <check-box :checked="checked"></check-box>
 </template>
 
 <script>
@@ -9,5 +9,10 @@ export default {
   components: {
     CheckBox
   },
+  data() {
+    return {
+      checked: false,
+    }
+  }
 }
 </script>
