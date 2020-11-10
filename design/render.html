@@ -6,12 +6,23 @@
   <title>Render Function</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <!-- 인스턴스 영역 -->
+    <!-- <p>{{ message }}</p>-->
+  </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     new Vue({
       el: '#app',
+      data: {
+        message: 'Hello Vue',
+      },
+      // template: '<p>{{ message }}</p>'
+      render(createElement) {
+        // return createElement('태그 이름', '태그 속성', '하위 태그 내용');
+        return createElement('p', this.message);
+      }
     })
   </script>
 </body>
