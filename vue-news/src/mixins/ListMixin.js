@@ -1,4 +1,4 @@
-import createListView from "../views/CreateListView"
+// import createListView from "../views/CreateListView"
 
 import bus from  '../utils/bus.js';
 export default {

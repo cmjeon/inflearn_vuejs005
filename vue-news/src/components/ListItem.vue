@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="news-list">
-      <li v-for="item in listItems" class="post">
+      <li v-for="item in listItems" :key="item.id" class="post">
         <!-- 포인트 영역 -->
         <div class="points">
           {{ item.points || 0}}
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { fetchNewsList } from '../api/index.js';
+// import { fetchNewsList } from '../api/index.js';
 export default {
   // created() {
   //   // this.$store.dispatch('FETCH_NEWS');
